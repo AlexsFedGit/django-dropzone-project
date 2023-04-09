@@ -16,6 +16,7 @@ def file_upload(request):
     if request.method == 'POST':
         my_file = request.FILES.get('file')
         if my_file:
+            # my_file.name
             Image.objects.create(image=my_file)
             return HttpResponse('')
         else:
